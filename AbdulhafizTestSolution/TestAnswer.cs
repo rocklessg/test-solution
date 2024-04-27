@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AbdulhafizTestSolution
+﻿namespace AbdulhafizTestSolution
 {
     public class TestAnswer
     {
-        public static int RobberyAlertSum(int[] money)
+        private const int magicNumberZero = 0;
+        private const int magicNumberOne = 1;
+        private const int magicNumberTwo = 2;
+        public static int MaximumRobberyAlertSum(int[] moneyInTheProspectiveHousesToRob)
         {
-            var totalMoney = 0;
-            for (int i = 0; i < money.Length; i++)
+            var totalAmountRobbed = magicNumberZero;
+            for (int cash = magicNumberZero; cash < moneyInTheProspectiveHousesToRob.Length; cash++)
             {
-                var indexIncrement = i + 1;
-                //indexIncrement++;
-                // Console.WriteLine(indexIncrement);
-                if (indexIncrement % 2 != 0)
+                var indexIncrement = cash + magicNumberOne;
+                if (indexIncrement % magicNumberTwo != magicNumberZero)
                 {
-                    totalMoney += money[i];
+                    totalAmountRobbed += moneyInTheProspectiveHousesToRob[cash];
                 }
             }
-            return totalMoney;
+            return totalAmountRobbed;
         }
-
     }
 }
